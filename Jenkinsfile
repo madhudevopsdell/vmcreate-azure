@@ -9,14 +9,18 @@ pipeline {
         PATH = "$TF_HOME:$PATH"
     }
     stages {
-        stage('Build') {
+        stage('init') {
             steps {
 
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lrta
-                    /usr/bin/terraform init
-                '''
+                withCredentials([azureServicePrincipal('my service principal')]) {
+  sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+                }
+
+                    sh '''
+                        echo "Multiline shell steps works too"
+                        ls -lrta
+                        /usr/bin/terraform init
+                    '''
             }
         }
     }
