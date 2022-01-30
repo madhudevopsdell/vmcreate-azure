@@ -19,7 +19,7 @@ pipeline {
                         ls -lrta
 
                         /usr/bin/terraform init
-                        /usr/bin/terraform apply
+                        /usr/bin/terraform apply -auto-approve
                         
 
                     '''
