@@ -17,6 +17,7 @@ pipeline {
                     sh '''
                         echo "Multiline shell steps works too"
                         ls -lrta
+                        az login
                         /usr/bin/terraform init
                         
                         echo $CLIENT_ID
