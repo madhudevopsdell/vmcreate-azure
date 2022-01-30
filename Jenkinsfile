@@ -13,7 +13,7 @@ pipeline {
             steps {
 
                 withCredentials([azureServicePrincipal('my service principal')]) {
-  sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+  sh 'az login --service-principal --username 0dc0e993-14c6-431e-9970-42fda2a84c0d  -p sH~4QCD8G8LrFlC.dhP9iz.3o6-41_g4nh  --tenant f6bd0f9c-ec65-4c2e-98d3-2911014543a1'
                 }
 
                     sh '''
