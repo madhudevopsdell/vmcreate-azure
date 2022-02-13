@@ -18,7 +18,7 @@ pipeline {
                         echo "Multiline shell steps works too"
                         ls -lrta
                         /usr/bin/terraform init
-                        /usr/bin/terraform apply -destory -auto-approve
+                        /usr/bin/terraform destory -auto-approve
                         
                     '''
             }
