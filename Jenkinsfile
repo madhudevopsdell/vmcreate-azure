@@ -18,7 +18,7 @@ pipeline {
                         echo "Multiline shell steps works too"
                         ls -lrta
                         /usr/bin/terraform init
-                        /usr/bin/terraform apply
+                        /usr/bin/terraform apply -auto-approve
                         
                     '''
             }
